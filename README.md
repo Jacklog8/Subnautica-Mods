@@ -1,2 +1,2 @@
 # Subnautica-Mods
-The sources for my Subnautica mods
+The sources and releases for my subnautica mods
