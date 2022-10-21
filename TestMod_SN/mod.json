@@ -1,0 +1,12 @@
+{
+  "Id": "TestMod",
+  "DisplayName": "TestMod SN",
+  "Author": "AcE",
+  "Version": "1.0.0",
+  "Enable": true,
+  "AssemblyName": "TestMod_SN.dll",
+  "VersionDependencies": {
+    "SMLHelper": "2.9.6"
+  },
+  "Game": "Subnautica"
+}
