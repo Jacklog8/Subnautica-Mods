@@ -24,7 +24,7 @@ namespace SeamothWarpModule_SN
 
         public static ManualLogSource logger;
 
-        public static float Distance = 30;
+        public static float Distance;
 
         private void Awake()
         {
@@ -51,26 +51,11 @@ namespace SeamothWarpModule_SN
             GameObject go;
             go = Instantiate<GameObject>(pf, Vector3.zero, Quaternion.identity, true);
 
-            yield return new WaitForSecondsRealtime(5);
+            yield return new WaitForSecondsRealtime(1);
             MeshRenderer[] renderers = go.FindChild("hologram").FindChild("worlddisplay").FindChild("wireframeworld").FindChild("MiniWorld").GetAllComponentsInChildren<MeshRenderer>();
+            Destroy(go);
 
             @out.Set(renderers[0].material);
         }
-
-        /*public static IEnumerator GetMaterialFromClassIDAsync(string classId, IOut<Material> material, int rendererIndex = 0)
-        {
-            material = null;
-
-            UWE.IPrefabRequest task = UWE.PrefabDatabase.GetPrefabAsync(classId);
-            yield return task;
-            task.TryGetPrefab(out GameObject forceFieldPrefab);
-
-            MeshRenderer[] meshRenderers = forceFieldPrefab.GetAllComponentsInChildren<MeshRenderer>();
-
-            if (meshRenderers != null)
-                Debug.LogWarning("Loacted mesh renderers.");
-
-            material.Set(meshRenderers[rendererIndex].material);
-        } */
     }
 }
